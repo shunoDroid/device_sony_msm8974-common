@@ -166,3 +166,5 @@ PRODUCT_PACKAGES += \
     wifilogd \
     wpa_supplicant \
     wpa_supplicant.conf
+
+-include vendor/shunodroid/shunodroid.mk
