@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2016 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,26 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <utils/Errors.h>
+#include "hidl_sync_util.h"
 
-namespace android
-{
-    /* status_t Parcel::writeString16 */
-    extern "C" status_t _ZN7android6Parcel13writeString16EPKDsj(const char16_t* str, size_t len);
+namespace {
+std::recursive_mutex g_mutex;
+}  // namespace
 
-    extern "C" status_t _ZN7android6Parcel13writeString16EPKtj(const char16_t* str, size_t len)
-    {
-        return _ZN7android6Parcel13writeString16EPKDsj(str, len);
-    }
-};
+namespace android {
+namespace hardware {
+namespace wifi {
+namespace V1_3 {
+namespace implementation {
+namespace hidl_sync_util {
+
+std::unique_lock<std::recursive_mutex> acquireGlobalLock() {
+    return std::unique_lock<std::recursive_mutex>{g_mutex};
+}
+
+}  // namespace hidl_sync_util
+}  // namespace implementation
+}  // namespace V1_3
+}  // namespace wifi
+}  // namespace hardware
+}  // namespace android

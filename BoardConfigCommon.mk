@@ -14,6 +14,8 @@
 
 BOARD_VENDOR := sony
 
+BUILD_BROKEN_DUP_RULES := true
+
 # Use Snapdragon LLVM Compiler if available
 TARGET_USE_SDCLANG := true
 
@@ -97,6 +99,9 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 TARGET_NO_RPC := true
 
+# Filesystem
+TARGET_FS_CONFIG_GEN += $(COMMON_PATH)/config.fs
+
 # Graphics
 USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
@@ -124,12 +129,7 @@ BOARD_USES_INIT_SONY := true
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Power
-TARGET_HAS_LEGACY_POWER_STATS := true
-TARGET_HAS_NO_WLAN_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
-
-# RIL
-TARGET_RIL_VARIANT := caf
 
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk

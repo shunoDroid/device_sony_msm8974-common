@@ -40,8 +40,8 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@1.0-impl \
-    android.hardware.health@1.0-service
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -68,7 +68,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-service-qti
+    android.hardware.power@1.2-service-qti
 
 # Rendering
 PRODUCT_PACKAGES += \
@@ -99,4 +99,4 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-	android.hardware.wifi@1.0-service
+	android.hardware.wifi@1.0-service.sony8974
