@@ -6,8 +6,8 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.1-impl
 
 # Bluetooth
-PRODUCT_PACKAGES += \
-	android.hardware.bluetooth@1.0-service
+#PRODUCT_PACKAGES += \
+#	android.hardware.bluetooth@1.0-service
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -68,7 +68,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service-qti
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service
 
 # Rendering
 PRODUCT_PACKAGES += \
