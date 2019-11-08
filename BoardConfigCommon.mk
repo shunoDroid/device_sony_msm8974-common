@@ -44,7 +44,8 @@ TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_VARIANT := krait
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := krait
 TARGET_CUSTOM_DTBTOOL := dtbToolLineage
 
 # Defines for HW subsystems
@@ -127,6 +128,9 @@ BOARD_USES_INIT_SONY := true
 
 # Lights HAL
 TARGET_PROVIDES_LIBLIGHT := true
+
+# Partition information
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Power
 TARGET_USES_INTERACTION_BOOST := true
