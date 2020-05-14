@@ -16,7 +16,8 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl 
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
 
 # Display
 PRODUCT_PACKAGES += \
@@ -36,7 +37,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
 
 # Health
 PRODUCT_PACKAGES += \

@@ -65,16 +65,16 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps_debug.conf \
+    $(LOCAL_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
+    $(LOCAL_PATH)/gps/etc/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/gps/etc/izat.conf:system/etc/izat.conf \
+    $(LOCAL_PATH)/gps/etc/sap.conf:system/etc/sap.conf
+
+PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
 
 PRODUCT_PACKAGES += \
-    gps.msm8974 \
-    libloc_core \
-    libloc_eng \
-    libgps.utils \
-    libloc_ds_api \
-    libloc_api_v02
+    gps.msm8974
 
 # Ion
 PRODUCT_PACKAGES += \
@@ -146,7 +146,8 @@ PRODUCT_PACKAGES += \
 
 # Thermal management
 PRODUCT_PACKAGES += \
-    thermanager
+    thermanager \
+    thermal.default
 
 # TimeKeep for managing time offsets w.r.t. RTC
 PRODUCT_PACKAGES += \
@@ -163,3 +164,5 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 -include vendor/shunodroid/shunodroid.mk
+# Include non-opensource parts
+$(call inherit-product, vendor/sony/msm8974-common/msm8974-common-vendor.mk)
